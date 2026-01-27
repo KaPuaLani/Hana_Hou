@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField]
+    private SceneController _sceneController;
+
     public string levelToLoad;
     // Start is called before the first frame update
     void Start()
@@ -39,6 +43,13 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(levelToLoad);
+        _sceneController.LoadScene(levelToLoad);
+    }
+    public void PauseGame()
+    {
+        //pause the game
+        Time.timeScale = 0;
+        //show our pause menu canvas
+        GetComponent<Canvas>().enabled = true;
     }
 }
