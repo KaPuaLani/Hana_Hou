@@ -8,7 +8,11 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        int temp = GameObject.FindGameObjectWithTag("GameOptions").GetComponent<MainMenuOptions>().difficulty;
+        if(temp == 1)
+        {
+            health = 6;
+        }
     }
 
     // Update is called once per frame
