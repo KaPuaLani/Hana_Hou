@@ -10,7 +10,10 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameObject.FindGameObjectWithTag("GameOptions").GetComponent<MainMenuOptions>().mobile == 2)
+        {
+            this.enabled = false;
+        }
     }
 
     // Update is called once per frame

@@ -7,7 +7,8 @@ public class MainMenuOptions : MonoBehaviour
 {
     //Create an empty game object and attach this script to it
     //create a tag called GameOptions and apply it to this object
-    public bool mobile = false;
+    // public bool mobile = false;
+    public int mobile = 0;
     public int difficulty = 0;
     //Create a toggle on a canvas, and assign it to this public field
     //On the toggle OnValueChanged field, set it to MainMenuOptions.SetMobile
@@ -19,10 +20,11 @@ public class MainMenuOptions : MonoBehaviour
 
         if (objs.Length > 1)
         {
-            Destroy(this.gameObject);
+            Destroy(transform.parent.gameObject);
+            Debug.Log("foo");
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(transform.parent.gameObject);
     }
     public void Medium()
     {
@@ -36,8 +38,18 @@ public class MainMenuOptions : MonoBehaviour
     {
         difficulty = 2;
     }
-    public void SetMobile()
+
+    public void PC()
     {
-        mobile = toggle.isOn;
+        mobile = 2;
     }
+
+    public void MB()
+    {
+        mobile = 1;
+    }
+    // public void SetMobile()
+    // {
+    //   mobile = toggle.isOn;
+    // }
 }
