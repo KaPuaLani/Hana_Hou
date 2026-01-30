@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
         {
             this.enabled = false;
         }
+        if (GameObject.FindGameObjectWithTag("GameOptions").GetComponent<MainMenuOptions>().mobile == 0)
+        {
+            this.enabled = false;
+        }
     }
 
     // Update is called once per frame
