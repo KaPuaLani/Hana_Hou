@@ -23,6 +23,22 @@ public class EnemyAI : MonoBehaviour
     public float patrolDistance = 3f;
     void Start()
     {
+        int temp = GameObject.FindGameObjectWithTag("GameOptions").GetComponent<MainMenuOptions>().difficulty;
+        if (temp == 0)
+        {
+            chaseSpeed = 2;
+            chaseTriggerDistance = 4;
+        }
+        if (temp == 1)
+        {
+            chaseSpeed = 4;
+            chaseTriggerDistance = 6;
+        }
+        if (temp == 2)
+        {
+            chaseSpeed = 6;
+            chaseTriggerDistance = 10;
+        }
         player = GameObject.FindGameObjectWithTag("Player");
         //home is my starting position when the game is played
         home = transform.position;

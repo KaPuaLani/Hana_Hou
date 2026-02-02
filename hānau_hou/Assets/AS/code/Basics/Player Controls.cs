@@ -24,6 +24,7 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         Vector2 moveDir = moveActionToUse.action.ReadValue<Vector2>();
-        transform.Translate(moveDir * speed * Time.deltaTime);
+        //transform.Translate(moveDir * speed * Time.deltaTime);
+        GetComponent<Rigidbody2D>().velocity = moveDir * speed;
     }
 }

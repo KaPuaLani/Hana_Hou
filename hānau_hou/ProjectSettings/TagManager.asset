@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tilefloor
   - GameOptions
+  - COL
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,7 @@ TagManager:
     locked: 0
   - name: ui
     uniqueID: 51573557
+    locked: 0
+  - name: herb
+    uniqueID: 3679479519
     locked: 0
